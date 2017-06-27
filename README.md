@@ -27,7 +27,9 @@ const path = require('path')
 
 module.exports = {
 	variables: {
-		TEST_VARIABLE: 'hello'
+		TEST_VARIABLE: 'hello',
+		CREATION_DATE: () => new Date(),
+		NAME_VARIATION: name => `${name}-san`
 	},
 	templates: [path.join(__dirname, 'templates')],
 	output: path.join(__dirname, 'out')
@@ -67,7 +69,7 @@ You can then call `npm run make:component MyComponent` and be happy!
 
 Templates are directories with files in them. They can also have other directories with other files, as deep as your
 heart desires. The content of a file will be replicated, with variables replaced. Variables can also be used in a file
-or a directory's name, check out the example templates within the `templates` directory. 
+or a directory's name, check out the example templates within the `example_templates` directory. 
 
 Variables are enclosed between `%` symbols, and these are defined by default:
 
@@ -80,7 +82,9 @@ CAMEL_NAME: camel(name),
 CAMEL_NAME_PLURAL: camel(pluralize.plural(name))
 ```
 
-where `name` is the one you pass from the command line. All the above variables can be overridden within the churnfile.
+where `name` is the one you pass from the command line. All the above variables can be overridden within the churnfile,
+and new ones can be defined within its `variables` key. You can use either immediate values or functions to define them,
+with the function variant always receiving the `name` as its first and only argument.
 
 The `.tpl` extension is optional, it will be stripped away if present. Use it if your editor screams at you for using 
 `%VARIABLES%`, knowing that you'll probably lose syntax highlighting.
