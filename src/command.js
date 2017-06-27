@@ -59,7 +59,7 @@ module.exports = {
 			{
 				NAME: toLower(name),
 				UPPER_NAME: toUpper(name),
-				NAME_PLURAL: pluralize.plural(name),
+				NAME_PLURAL: toLower(pluralize.plural(name)),
 				UPPER_NAME_PLURAL: toUpper(pluralize.plural(name)),
 				CAMEL_NAME: camel(name),
 				CAMEL_NAME_PLURAL: camel(pluralize.plural(name))

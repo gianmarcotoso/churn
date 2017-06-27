@@ -74,12 +74,12 @@ or a directory's name, check out the example templates within the `example_templ
 Variables are enclosed between `%` symbols, and these are defined by default:
 
 ```
-NAME: toLower(name),
-UPPER_NAME: toUpper(name),
-NAME_PLURAL: pluralize.plural(name),
-UPPER_NAME_PLURAL: toUpper(pluralize.plural(name)),
-CAMEL_NAME: camel(name),
-CAMEL_NAME_PLURAL: camel(pluralize.plural(name))
+NAME: toLower(name),									// hellofriend
+UPPER_NAME: toUpper(name),								// HELLOFRIEND
+NAME_PLURAL: toLower(pluralize.plural(name)),			// hellofriends
+UPPER_NAME_PLURAL: toUpper(pluralize.plural(name)),		// HELLOFRIENDS
+CAMEL_NAME: camel(name),								// HelloFriend
+CAMEL_NAME_PLURAL: camel(pluralize.plural(name))		// HelloFriends
 ```
 
 where `name` is the one you pass from the command line. All the above variables can be overridden within the churnfile,
