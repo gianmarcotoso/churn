@@ -49,6 +49,20 @@ A simple example that uses the default `churnfile.js` is the following
 You can omit the `--template` option. In that case, `churn` will look for a template with the same name of what you are
 trying to create. This is not recommended.
 
+You can add it to you project by running `npm install churnjs` ( `churn` was already taken :( ), adding a churnfile and some templates and then alias some `npm` scripts in your `package.json`:
+
+```
+{
+	//...
+	scripts: {
+		"make:component": "churnjs --template component --output src/components"
+	},
+	//...
+}
+```
+
+You can then call `npm run make:component MyComponent` and be happy!
+
 ## Templates
 
 Templates are directories with files in them. They can also have other directories with other files, as deep as your
