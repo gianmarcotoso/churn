@@ -25,11 +25,16 @@ module.exports = {
 		{
 			command: '--config <config>',
 			description: '(Optional) Explcitly specificy the configuration file to use instead of churnfile.js'
+		},
+		{
+			command: '--flat',
+			description: "Don't wrap generated files within a dedicated folder. May overwrite already existing files!",
+			default: false
 		}
 	],
 	func: (args, options) => {
 		const name = args[0]
-		const { config } = options
+		const { config, flat } = options
 		const template = options.template || name
 
 		if (!template) {
@@ -63,7 +68,7 @@ module.exports = {
 		)
 
 		const output = options.output || churnfile.output
-		churn(variables, fullPath, path.join(output, name))
+		churn(variables, fullPath, flat ? output : path.join(output, name))
 
 		console.log('Done!')
 	}
