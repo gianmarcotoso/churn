@@ -1,0 +1,1 @@
+My name is %CAMEL_NAME%!

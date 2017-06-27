@@ -1,8 +1,9 @@
+const mkdirp = require('mkdirp')
 const fs = require('fs')
 const path = require('path')
 
 const churn = (variables, fullPath, output) => {
-	fs.mkdirSync(output)
+	mkdirp.sync(output)
 
 	const files = fs.readdirSync(fullPath)
 	files.forEach(element => {
