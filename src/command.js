@@ -7,6 +7,7 @@ const { toLower, toUpper } = require('ramda')
 const churn = require('./churn')
 const readConfig = require('./readConfig')
 const findTemplate = require('./findTemplate')
+const evaluateVariables = require('./evaluateVariables')
 
 module.exports = {
 	name: 'churn',
@@ -58,7 +59,7 @@ module.exports = {
 				CAMEL_NAME: camel(name),
 				CAMEL_NAME_PLURAL: camel(pluralize.plural(name))
 			},
-			churnfile.variables || {}
+			evaluateVariables(name, churnfile.variables || {})
 		)
 
 		const output = options.output || churnfile.output
