@@ -2,11 +2,15 @@ const mkdirp = require('mkdirp')
 const fs = require('fs')
 const path = require('path')
 
+const VARIABLES_FILE = '.variables'
+
 const churn = (variables, fullPath, output) => {
 	mkdirp.sync(output)
 
 	const files = fs.readdirSync(fullPath)
 	files.forEach(element => {
+		if (element === VARIABLES_FILE) return
+
 		const filePath = path.join(fullPath, element)
 		if (fs.lstatSync(filePath).isDirectory()) {
 			let subfolder = element
