@@ -1,6 +1,6 @@
 {
   "name": "churnjs",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Create files from templates",
   "bin": "src/cli.js",
   "main": "src/churn.js",
