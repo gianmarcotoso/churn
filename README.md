@@ -1,3 +1,5 @@
+[![CryptoTip](https://img.shields.io/badge/Donate%20with-CryptoTip-blue.svg?style=flat&colorB=007bff)](https://cryptotip.it/p/gianmarcotoso)
+
 # Churn
 
 Generate files and folders from a template. Let it do the boring stuff for you.
